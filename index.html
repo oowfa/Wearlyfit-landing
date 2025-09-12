@@ -8,8 +8,11 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -31,7 +34,7 @@
     }
 
     .card-shadow {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .gallery-img:hover {
@@ -44,58 +47,41 @@
       transform: translateY(-2px);
       transition: 0.2s;
     }
-
-    /* Scroll bounce */
-    @keyframes bounceY { 0%,100%{transform: translateY(0);}50%{transform: translateY(8px);} }
   </style>
 </head>
 
-<body class="antialiased">
+<body>
 
   <!-- Hero Section -->
-  <section class="relative flex flex-col justify-center items-center text-center px-6 py-12 sm:py-20" style="background: linear-gradient(to bottom, var(--secondary-2), var(--secondary-1));">
-
-    <!-- Logo top-left -->
-    <div class="absolute top-6 left-6 sm:top-8 sm:left-8">
-      <img src="logo.png" alt="Wearlyfit Logo" class="w-24 sm:w-28">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6" style="background: linear-gradient(to bottom, var(--secondary-2), var(--secondary-1));">
+    
+    <!-- Logo في أعلى يسار -->
+    <div class="w-full flex justify-start pt-6 px-6">
+      <img src="wearlyfit-high-resolution-logo-grayscale-transparent.png" alt="Wearlyfit Logo" class="w-28">
     </div>
 
-    <!-- Main Hero Content -->
-    <div class="max-w-xl mt-8 sm:mt-0 space-y-4">
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-[var(--brand-primary)]">Wearlyfit</h1>
-      <p class="text-lg font-semibold text-gray-700">Your Fit, Your Story</p>
-      <p class="text-gray-600 text-base sm:text-lg">The first Algerian fashion marketplace. Buy, sell, and explore clothing with Cash on Delivery — trusted by Algerian customers.</p>
-
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row justify-center gap-4 mt-4">
-        <a href="#download" class="inline-flex items-center justify-center px-6 py-3 rounded-xl shadow card-shadow font-semibold text-white bg-[var(--accent-1)]">
-          Download Now
-        </a>
-        <a href="#features" class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-200 font-semibold text-[var(--brand-primary)] bg-white">
-          Learn More
-        </a>
+    <!-- رفع الكلام قليلاً -->
+    <div class="mt-6 text-center">
+      <h1 class="text-4xl font-extrabold text-[var(--brand-primary)]">Wearlyfit</h1>
+      <p class="text-lg font-semibold mb-3">Your Fit, Your Story</p>
+      <p class="max-w-lg mb-6">The first Algerian fashion marketplace. Buy, sell, and explore clothing with Cash on Delivery.</p>
+      <a href="#download" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl shadow card-shadow font-semibold text-white" style="background: var(--accent-1);">
+        <i class="fa-solid fa-download"></i> Download Now
+      </a>
+      <div class="mt-10">
+        <img src="mockup.png" alt="App Mockup" class="max-w-xs mx-auto animate-[fadeIn_1s_ease-in-out]">
       </div>
-    </div>
-
-    <!-- App Mockup -->
-    <div class="mt-10 sm:mt-12">
-      <img src="mockup.png" alt="App Mockup" class="max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-3xl shadow-lg">
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="mt-8 flex justify-center animate-bounce">
-      <div class="w-8 h-12 rounded-full border-2 border-gray-300 flex items-start justify-center p-1">
-        <div class="w-2 h-2 bg-[var(--brand-primary)] rounded-full animate-bounce" style="animation: bounceY 1.4s infinite;"></div>
+      <div class="mt-6 animate-bounce">
+        <i class="fa-solid fa-angles-down text-[var(--brand-primary)] text-2xl"></i>
       </div>
     </div>
 
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="py-12 px-6 max-w-6xl mx-auto">
+  <section class="py-12 px-6 max-w-6xl mx-auto">
     <h2 class="text-3xl font-extrabold text-center mb-10 text-[var(--brand-primary)]">Why Wearlyfit?</h2>
     <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
-      
       <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
         <i class="fa-solid fa-truck text-3xl text-[var(--brand-primary)] mb-3"></i>
         <h3 class="font-bold mb-2">Cash on Delivery</h3>
@@ -106,7 +92,7 @@
       <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
         <i class="fa-solid fa-shirt text-3xl text-[var(--brand-primary)] mb-3"></i>
         <h3 class="font-bold mb-2">Fashion Variety</h3>
-        <p class="mb-4">Clothes, shoes, and accessories from local sellers.</p>
+        <p class="mb-4">Clothes, shoes, accessories from local sellers.</p>
         <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
       </div>
 
@@ -170,4 +156,21 @@
   <section id="download" class="py-12 px-6 text-center text-white" style="background: linear-gradient(to right, var(--brand-primary), var(--accent-2));">
     <h2 class="text-3xl font-extrabold mb-6">Start Your Style Journey Today</h2>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-apple"></i
+      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-apple"></i> Download on App Store</a>
+      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-google-play"></i> Get it on Google Play</a>
+    </div>
+    <p class="mt-4 opacity-80">Join thousands of fashion lovers in Algeria.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 px-6 text-white text-center" style="background: #2a3f42;">
+    <p class="mb-2">© 2025 Wearlyfit – Your Fit, Your Story</p>
+    <div class="flex justify-center gap-3">
+      <a href="#" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
