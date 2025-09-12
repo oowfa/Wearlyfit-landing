@@ -3,175 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wearlyfit – Your Fit, Your Story</title>
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-
+  <title>Wearlyfit</title>
   <style>
-    :root {
-      --brand-primary: #3D5A5E;
-      --secondary-1: #E7E1D7;
-      --secondary-2: #F6F4F2;
-      --accent-1: #CBAF7E;
-      --accent-2: #87A8A4;
-    }
-
-    body {
-      font-family: 'Comfortaa', sans-serif;
-      background: var(--secondary-2);
+    html {
       scroll-behavior: smooth;
     }
-
-    h1, h2, h3 {
-      font-family: 'Nunito', sans-serif;
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+      color: #333;
     }
-
-    .card-shadow {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* 🔝 الشريط العلوي */
+    header {
+      background-color: #3D5A5E;
+      display: flex;
+      align-items: center;
+      padding: 8px 20px; /* تصغير ارتفاع الشريط */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      cursor: pointer;
     }
-
-    .gallery-img:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease;
+    header img {
+      height: 60px; /* تكبير اللوغو */
     }
-
-    a:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-      transition: 0.2s;
+    /* 🔤 عنوان رئيسي */
+    .hero {
+      text-align: center;
+      padding-top: 25px; /* قريب من الشريط العلوي */
+      padding-bottom: 40px;
+    }
+    .hero h1 {
+      font-family: 'Comfortaa', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      margin: 0;
+    }
+    /* 🖼️ صور Marketplace */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    /* 📲 زر Explore */
+    .explore {
+      text-align: center;
+      margin: 50px 0 60px; /* إنزال الزر قليلاً بعيد عن الصور */
+    }
+    .explore a {
+      background-color: #3D5A5E;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    /* 📱 فوتر */
+    footer {
+      background-color: #3D5A5E;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .social-icons {
+      margin-bottom: 10px;
+    }
+    .social-icons a {
+      margin: 0 8px;
+      font-size: 1.3rem;
     }
   </style>
+  <!-- استدعاء أيقونات FontAwesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+<body id="top">
 
-<body>
+  <!-- 🟢 شريط علوي قابل للنقر بالكامل -->
+  <a href="#top" style="text-decoration: none; color: inherit;">
+    <header>
+      <img src="IMG_20250912_233659.png" alt="Wearlyfit Logo">
+    </header>
+  </a>
 
-  <!-- شريط علوي مع لوغو في يسار -->
-  <header class="w-full bg-[var(--brand-primary)] fixed top-0 left-0 z-50 shadow-md">
-    <div class="max-w-6xl mx-auto flex items-center justify-start px-4" style="height: 60px;">
-      <img src="IMG_20250912_233659.png" alt="Wearlyfit Logo" class="h-[40px]">
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6" style="padding-top: 70px; background: linear-gradient(to bottom, var(--secondary-2), var(--secondary-1));">
-    <h1 class="text-5xl font-extrabold text-[var(--brand-primary)]">Wearlyfit</h1>
-    <p class="text-lg font-semibold mb-3">Your Fit, Your Story</p>
-    <p class="max-w-lg mb-6">The first Algerian fashion marketplace. Buy, sell, and explore clothing with Cash on Delivery.</p>
-    <a href="#download" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl shadow card-shadow font-semibold text-white" style="background: var(--accent-1);">
-      <i class="fa-solid fa-download"></i> Download Now
-    </a>
-    <div class="mt-10">
-      <img src="mockup.png" alt="App Mockup" class="max-w-xs mx-auto animate-[fadeIn_1s_ease-in-out]">
-    </div>
-    <div class="mt-6 animate-bounce">
-      <i class="fa-solid fa-angles-down text-[var(--brand-primary)] text-2xl"></i>
-    </div>
+  <!-- 🏷️ العنوان الرئيسي -->
+  <section class="hero">
+    <h1>Wearlyfit</h1>
+    <p>Your Fit, Your Story</p>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-12 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-extrabold text-center mb-10 text-[var(--brand-primary)]">Why Wearlyfit?</h2>
-    <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
-      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
-        <i class="fa-solid fa-truck text-3xl text-[var(--brand-primary)] mb-3"></i>
-        <h3 class="font-bold mb-2">Cash on Delivery</h3>
-        <p class="mb-4">Pay when you receive your order.</p>
-        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
-        <i class="fa-solid fa-shirt text-3xl text-[var(--brand-primary)] mb-3"></i>
-        <h3 class="font-bold mb-2">Fashion Variety</h3>
-        <p class="mb-4">Clothes, shoes, accessories from local sellers.</p>
-        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
-        <i class="fa-solid fa-bag-shopping text-3xl text-[var(--brand-primary)] mb-3"></i>
-        <h3 class="font-bold mb-2">Easy Selling</h3>
-        <p class="mb-4">List your items quickly and easily.</p>
-        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
-      </div>
-
-      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
-        <i class="fa-solid fa-lock text-3xl text-[var(--brand-primary)] mb-3"></i>
-        <h3 class="font-bold mb-2">Secure Platform</h3>
-        <p class="mb-4">Safe transactions and trusted sellers.</p>
-        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
-      </div>
-    </div>
+  <!-- 🖼️ معرض الصور بالترتيب الجديد -->
+  <section class="gallery">
+    <img src="anna-evans-Vfy9pP8tkQg-unsplash.jpg" alt="">
+    <img src="pexels-kristina-chuprina-132621985-18935118.jpg" alt="">
+    <img src="blaire-harmon-aXa6y7lD5wc-unsplash.jpg" alt="">
+    <img src="tuananh-blue-3heVBZoJXGU-unsplash.jpg" alt="">
+    <img src="tory-hoffman-i69uoOV4GbI-unsplash.jpg" alt="">
+    <img src="pexels-ayobami-adepoju-61080370-32519377.jpg" alt="">
   </section>
 
-  <!-- Gallery Section -->
-  <section class="py-12 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-extrabold text-center mb-10 text-[var(--brand-primary)]">Discover the Marketplace</h2>
-    <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
-      <img src="anna-evans-Vfy9pP8tkQg-unsplash.jpg" class="rounded-xl gallery-img card-shadow">
-      <img src="pexels-kristina-chuprina-132621985-18935118.jpg" class="rounded-xl gallery-img card-shadow">
-      <img src="blaire-harmon-aXa6y7lD5wc-unsplash.jpg" class="rounded-xl gallery-img card-shadow">
-      <img src="tuananh-blue-3heVBZoJXGU-unsplash.jpg" class="rounded-xl gallery-img card-shadow">
-      <img src="tory-hoffman-i69uoOV4GbI-unsplash.jpg" class="rounded-xl gallery-img card-shadow">
-      <img src="pexels-ayobami-adepoju-61080370-32519377.jpg" class="rounded-xl gallery-img card-shadow">
-    </div>
-    <div class="text-center mt-12">
-      <a href="#download" class="px-6 py-3 rounded-xl font-semibold text-white" style="background: var(--accent-1);">Explore More on the App</a>
-    </div>
-  </section>
+  <!-- 📲 زر التحميل -->
+  <div class="explore">
+    <a href="#download">Explore More on the App</a>
+  </div>
 
-  <!-- How It Works Section -->
-  <section class="py-12 px-6 max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-extrabold text-[var(--brand-primary)] mb-8">How It Works</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="flex flex-col items-center">
-        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 text-white" style="background: var(--accent-1);">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <p>Browse clothing</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 text-white" style="background: var(--accent-1);">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </div>
-        <p>Order with Cash on Delivery</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 text-white" style="background: var(--accent-1);">
-          <i class="fa-solid fa-face-smile"></i>
-        </div>
-        <p>Receive and enjoy</p>
-      </div>
+  <!-- 📄 فوتر -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/wearlyfit.app?igsh=N3R3ZjNmMXM0dHBu" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1FCZxqRtiP/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@wearlyfit.app?_t=ZS-8zfj7BFJJpq&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="mailto:wearlyfit.app@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/213652591860"><i class="fab fa-whatsapp"></i></a>
     </div>
-  </section>
-
-  <!-- Download Section -->
-  <section id="download" class="py-12 px-6 text-center text-white" style="background: linear-gradient(to right, var(--brand-primary), var(--accent-2));">
-    <h2 class="text-3xl font-extrabold mb-6">Start Your Style Journey Today</h2>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-apple"></i> Download on App Store</a>
-      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-google-play"></i> Get it on Google Play</a>
-    </div>
-    <p class="mt-4 opacity-80">Join thousands of fashion lovers in Algeria.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 px-6 text-white text-center" style="background: #2a3f42;">
-    <div class="flex justify-center gap-3 mb-3">
-      <a href="https://www.facebook.com/share/1FCZxqRtiP/" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/wearlyfit.app?igsh=N3R3ZjNmMXM0dHBu" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@wearlyfit.app?_t=ZS-8zfj7BFJJpq&_r=1" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-tiktok"></i></a>
-    </div>
-    <p class="text-sm flex items-center justify-center gap-2"><i class="fa-regular fa-envelope"></i><a href="mailto:wearlyfit.app@gmail.com" class="underline">wearlyfit.app@gmail.com</a></p>
-    <p class="text-sm flex items-center justify-center gap-2"><i class="fab fa-whatsapp"></i><a href="https://wa.me/213652591860" class="underline">+213 652 59 18 60</a></p>
-    <p class="text-xs mt-2"><a href="https://oowfa.github.io/wearlyfit-privacy/wearlyfit.html" class="underline">Privacy Policy</a></p>
-    <p class="mt-2">© 2025 Wearlyfit – Your Fit, Your Story</p>
+    <a href="https://oowfa.github.io/wearlyfit-privacy/wearlyfit.html" target="_blank">Privacy Policy</a><br>
+    <p>© 2025 Wearlyfit – Your Fit, Your Story</p>
   </footer>
 
 </body>
-                                                                                                                     </html>
+</html>
