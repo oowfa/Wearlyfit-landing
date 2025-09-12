@@ -1,322 +1,168 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wearlyfit — Your Fit, Your Story</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wearlyfit – Your Fit, Your Story</title>
+
   <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Nunito:wght@800;900&display=swap" rel="stylesheet">  <style>
-    :root{
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
       --brand-primary: #3D5A5E;
-      --brand-sec-1: #E7E1D7;
-      --brand-sec-2: #F6F4F2;
+      --secondary-1: #E7E1D7;
+      --secondary-2: #F6F4F2;
       --accent-1: #CBAF7E;
       --accent-2: #87A8A4;
     }
-    /* small helpers for fonts */
-    .font-head{ font-family: 'Nunito', sans-serif; }
-    .font-body{ font-family: 'Comfortaa', cursive; }
 
-    /* hero warm gradient */
-    .hero-bg{
-      background: linear-gradient(180deg, var(--brand-sec-2) 0%, #FFFDFB 100%);
+    body {
+      font-family: 'Comfortaa', sans-serif;
+      background: var(--secondary-2);
+      scroll-behavior: smooth;
     }
 
-    /* scroll indicator */
-    @keyframes bounceY { 0%{ transform: translateY(0);}50%{ transform: translateY(8px);}100%{ transform: translateY(0);} }
+    h1, h2, h3 {
+      font-family: 'Nunito', sans-serif;
+    }
 
-    /* subtle card shadow */
-    .card-shadow{ box-shadow: 0 8px 20px rgba(45,56,63,0.06); }
+    .card-shadow {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-    /* smartphone mockup effect */
-    .phone-frame{ background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); border-radius: 28px; box-shadow: 0 20px 40px rgba(61,90,94,0.12); }
+    .gallery-img:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease;
+    }
 
-    /* gallery hover */
-    .gallery-img{ transition: transform .35s ease, box-shadow .35s ease; }
-    .gallery-img:hover{ transform: scale(1.04); box-shadow: 0 16px 30px rgba(0,0,0,0.12); }
+    a:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      transition: 0.2s;
+    }
+  </style>
+</head>
 
-  </style></head>
-<body class="font-body text-gray-800 antialiased">  <!-- Container -->  <main class="min-h-screen w-full"><!-- Section 1: Hero -->
-<section class="hero-bg py-12 sm:py-20">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<body>
 
-    <!-- Left column: branding + copy -->
-    <div class="space-y-6">
-      <!-- Logo + Name -->
-      <div class="flex items-center gap-3">
-        <!-- placeholder logo -->
-        <div class="w-14 h-14 rounded-lg flex items-center justify-center" style="background:var(--brand-primary);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
-            <rect x="3" y="3" width="18" height="18" rx="4" fill="white" opacity="0.06"></rect>
-            <path d="M6.5 15.5L9.5 9.5L14.5 11L17.5 6.5" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div>
-          <div class="text-2xl font-head text-[var(--brand-primary)]">Wearlyfit</div>
-          <div class="text-sm text-gray-500">Algeria’s clothing marketplace</div>
-        </div>
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6" style="background: linear-gradient(to bottom, var(--secondary-2), var(--secondary-1));">
+    <img src="logo.png" alt="Wearlyfit Logo" class="w-20 mb-4">
+    <h1 class="text-4xl font-extrabold text-[var(--brand-primary)]">Wearlyfit</h1>
+    <p class="text-lg font-semibold mb-3">Your Fit, Your Story</p>
+    <p class="max-w-lg mb-6">The first Algerian fashion marketplace. Buy, sell, and explore clothing with Cash on Delivery.</p>
+    <a href="#download" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl shadow card-shadow font-semibold text-white" style="background: var(--accent-1);">
+      <i class="fa-solid fa-download"></i> Download Now
+    </a>
+    <div class="mt-10">
+      <img src="mockup.png" alt="App Mockup" class="max-w-xs mx-auto animate-[fadeIn_1s_ease-in-out]">
+    </div>
+    <div class="mt-6 animate-bounce">
+      <i class="fa-solid fa-angles-down text-[var(--brand-primary)] text-2xl"></i>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-12 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-center mb-10 text-[var(--brand-primary)]">Why Wearlyfit?</h2>
+    <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-6">
+      
+      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
+        <i class="fa-solid fa-truck text-3xl text-[var(--brand-primary)] mb-3"></i>
+        <h3 class="font-bold mb-2">Cash on Delivery</h3>
+        <p class="mb-4">Pay when you receive your order.</p>
+        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
       </div>
 
-      <!-- Slogan -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-head font-extrabold leading-tight text-[var(--brand-primary)]">
-        Your Fit, Your Story
-      </h1>
-
-      <!-- Tagline -->
-      <p class="max-w-xl text-gray-700 text-base sm:text-lg">
-        The first Algerian fashion marketplace. Buy, sell, and explore clothing with Cash on Delivery — trusted & simple for Algerian customers.
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#download" class="inline-flex items-center justify-center px-6 py-3 rounded-xl shadow card-shadow font-semibold text-white" style="background:var(--accent-1);">
-          Download Now
-        </a>
-        <a href="#features" class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-gray-200 font-semibold text-[var(--brand-primary)] bg-white">
-          Learn More
-        </a>
+      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
+        <i class="fa-solid fa-shirt text-3xl text-[var(--brand-primary)] mb-3"></i>
+        <h3 class="font-bold mb-2">Fashion Variety</h3>
+        <p class="mb-4">Clothes, shoes, accessories from local sellers.</p>
+        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
       </div>
 
-      <!-- trust note -->
-      <div class="flex items-center gap-3 text-sm text-gray-600">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="opacity-80">
-          <path d="M12 1.5L15.09 8.26L22.5 9.27L17 14.14L18.18 21.5L12 18.27L5.82 21.5L7 14.14L1.5 9.27L8.91 8.26L12 1.5Z" stroke="var(--brand-primary)" stroke-width="1" stroke-linejoin="round"/>
-        </svg>
-        <span>Supports Cash on Delivery — built for Algerian buyers</span>
+      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
+        <i class="fa-solid fa-bag-shopping text-3xl text-[var(--brand-primary)] mb-3"></i>
+        <h3 class="font-bold mb-2">Easy Selling</h3>
+        <p class="mb-4">List your items quickly and easily.</p>
+        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-[var(--secondary-1)] card-shadow text-center">
+        <i class="fa-solid fa-lock text-3xl text-[var(--brand-primary)] mb-3"></i>
+        <h3 class="font-bold mb-2">Secure Platform</h3>
+        <p class="mb-4">Safe transactions and trusted sellers.</p>
+        <a href="#download" class="text-[var(--accent-1)] font-semibold">Get the App</a>
       </div>
 
     </div>
+  </section>
 
-    <!-- Right column: phone mockup -->
-    <div class="flex items-center justify-center">
-      <div class="phone-frame w-[300px] sm:w-[360px] md:w-[420px] p-5 rounded-3xl">
-        <!-- simple stack of sample images to simulate app screens -->
-        <div class="h-[560px] bg-white rounded-2xl overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1520975924231-9f3f7a0a8a3e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="app screen" class="w-full h-full object-cover" />
+  <!-- Gallery Section -->
+  <section class="py-12 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-center mb-10 text-[var(--brand-primary)]">Discover the Marketplace</h2>
+    <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4">
+      <img src="img1.jpg" loading="lazy" class="rounded-xl gallery-img card-shadow">
+      <img src="img2.jpg" loading="lazy" class="rounded-xl gallery-img card-shadow">
+      <img src="img3.jpg" loading="lazy" class="rounded-xl gallery-img card-shadow">
+      <img src="img4.jpg" loading="lazy" class="rounded-xl gallery-img card-shadow">
+    </div>
+    <div class="text-center mt-8">
+      <a href="#download" class="px-6 py-3 rounded-xl font-semibold text-white" style="background: var(--accent-1);">Explore More on the App</a>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-12 px-6 max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-extrabold text-[var(--brand-primary)] mb-8">How It Works</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 text-white" style="background: var(--accent-1);">
+          <i class="fa-solid fa-magnifying-glass"></i>
         </div>
+        <p>Browse clothing</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 text-white" style="background: var(--accent-1);">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <p>Order with Cash on Delivery</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3 text-white" style="background: var(--accent-1);">
+          <i class="fa-solid fa-face-smile"></i>
+        </div>
+        <p>Receive and enjoy</p>
       </div>
     </div>
+  </section>
 
-  </div>
-
-  <!-- Scroll down indicator -->
-  <div class="mt-8 flex justify-center">
-    <div class="w-8 h-12 rounded-full border-2 border-gray-300 flex items-start justify-center p-1">
-      <div class="w-2 h-2 bg-[var(--brand-primary)] rounded-full animate-bounce" style="animation: bounceY 1.4s infinite;"></div>
+  <!-- Download Section -->
+  <section id="download" class="py-12 px-6 text-center text-white" style="background: linear-gradient(to right, var(--brand-primary), var(--accent-2));">
+    <h2 class="text-3xl font-extrabold mb-6">Start Your Style Journey Today</h2>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-apple"></i> Download on App Store</a>
+      <a href="#" class="bg-[var(--accent-2)] text-white px-6 py-3 rounded-xl flex items-center gap-2 card-shadow"><i class="fa-brands fa-google-play"></i> Get it on Google Play</a>
     </div>
-  </div>
+    <p class="mt-4 opacity-80">Join thousands of fashion lovers in Algeria.</p>
+  </section>
 
-</section>
-
-<!-- Section 2: Features -->
-<section id="features" class="py-12 sm:py-16">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-head text-[var(--brand-primary)] mb-6">Why Wearlyfit?</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- Card 1 -->
-      <div class="bg-[var(--brand-sec-1)] rounded-xl p-5 card-shadow flex flex-col justify-between">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center bg-white/80">
-            <!-- icon -->
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7h18M7 11h10M10 15h4" stroke="var(--brand-primary)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-[var(--brand-primary)]">Cash on Delivery</h3>
-            <p class="text-sm text-gray-700">Pay when you receive your order — secure and convenient for Algerian customers.</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <a href="#download" class="inline-block text-sm font-semibold px-3 py-2 rounded-md bg-white text-[var(--brand-primary)]">Get the App</a>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-[var(--brand-sec-1)] rounded-xl p-5 card-shadow flex flex-col justify-between">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center bg-white/80">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7h18v12H3zM7 3h10v4H7z" stroke="var(--brand-primary)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-[var(--brand-primary)]">Fashion Variety</h3>
-            <p class="text-sm text-gray-700">Clothes, shoes, and accessories from local sellers across Algeria.</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <a href="#download" class="inline-block text-sm font-semibold px-3 py-2 rounded-md bg-white text-[var(--brand-primary)]">Get the App</a>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-[var(--brand-sec-1)] rounded-xl p-5 card-shadow flex flex-col justify-between">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center bg-white/80">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="var(--brand-primary)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-[var(--brand-primary)]">Easy Selling</h3>
-            <p class="text-sm text-gray-700">List your items quickly with photos and descriptions — start earning.</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <a href="#download" class="inline-block text-sm font-semibold px-3 py-2 rounded-md bg-white text-[var(--brand-primary)]">Get the App</a>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-[var(--brand-sec-1)] rounded-xl p-5 card-shadow flex flex-col justify-between">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-lg flex items-center justify-center bg-white/80">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2" stroke="var(--brand-primary)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-[var(--brand-primary)]">Secure Platform</h3>
-            <p class="text-sm text-gray-700">A safe marketplace with clear seller profiles and easy dispute resolution.</p>
-          </div>
-        </div>
-        <div class="mt-4">
-          <a href="#download" class="inline-block text-sm font-semibold px-3 py-2 rounded-md bg-white text-[var(--brand-primary)]">Get the App</a>
-        </div>
-      </div>
-
+  <!-- Footer -->
+  <footer class="py-6 px-6 text-white text-center" style="background: #2a3f42;">
+    <p class="mb-2">© 2025 Wearlyfit – Your Fit, Your Story</p>
+    <div class="flex justify-center gap-3">
+      <a href="#" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="w-8 h-8 flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20"><i class="fab fa-tiktok"></i></a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Section 3: Product Gallery -->
-<section class="py-12 sm:py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-head text-[var(--brand-primary)] mb-6">Discover the Marketplace</h2>
-    <p class="text-gray-700 mb-6 max-w-2xl">Explore a curated selection of clothing, shoes, and accessories from local sellers. Tap any item to view details and purchase with Cash on Delivery.</p>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-      <!-- placeholders: replace with your images or app screenshots -->
-      <img src="https://images.unsplash.com/photo-1520975924231-9f3f7a0a8a3e?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="dress" class="rounded-xl gallery-img object-cover w-full h-40" />
-      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="jacket" class="rounded-xl gallery-img object-cover w-full h-40" />
-      <img src="https://images.unsplash.com/photo-1526178618033-6f3b3e0b0a2b?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="sneakers" class="rounded-xl gallery-img object-cover w-full h-40" />
-      <img src="https://images.unsplash.com/photo-1519741497410-1d3f3d9d8a1b?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="handbag" class="rounded-xl gallery-img object-cover w-full h-40" />
-      <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="tshirt" class="rounded-xl gallery-img object-cover w-full h-40" />
-      <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="app-screenshot" class="rounded-xl gallery-img object-cover w-full h-40" />
-    </div>
-
-    <div class="mt-6">
-      <a href="#download" class="inline-block px-6 py-3 rounded-lg font-semibold" style="background:var(--accent-1); color:white;">Explore More on the App</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- Section 4: How It Works -->
-<section class="py-12 sm:py-16 bg-[var(--brand-sec-2)]">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-2xl font-head text-[var(--brand-primary)] mb-8">How it works</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <div class="w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4" style="background:var(--accent-1);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h16" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="font-semibold text-[var(--brand-primary)]">Browse clothing</h3>
-        <p class="text-sm text-gray-700 mt-2">Find styles from local sellers — filter by size, price, and brand.</p>
-      </div>
-
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <div class="w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4" style="background:var(--accent-1);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 11l5 5 5-9" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="font-semibold text-[var(--brand-primary)]">Order with Cash on Delivery</h3>
-        <p class="text-sm text-gray-700 mt-2">Choose Cash on Delivery at checkout — pay only when the package arrives.</p>
-      </div>
-
-      <div class="p-6 bg-white rounded-xl card-shadow">
-        <div class="w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4" style="background:var(--accent-1);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="font-semibold text-[var(--brand-primary)]">Receive and enjoy</h3>
-        <p class="text-sm text-gray-700 mt-2">Try your purchase at home — keep what you love, return what you don't.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Section 5: Download -->
-<section id="download" class="py-12 sm:py-16" style="background: linear-gradient(135deg, var(--brand-primary), #315055);">
-  <div class="max-w-4xl mx-auto px-6 text-center text-white">
-    <h2 class="text-2xl sm:text-3xl font-head font-extrabold mb-4">Start Your Style Journey Today</h2>
-    <p class="max-w-2xl mx-auto text-sm sm:text-base mb-6 text-white/90">Join thousands of fashion lovers in Algeria. Download Wearlyfit and discover clothing from sellers near you.</p>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a class="inline-flex items-center gap-3 px-5 py-3 rounded-lg font-semibold" href="#" style="background:var(--accent-2); color:white;">
-        <!-- Apple logo (simple) -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M16.365 1.43c-.94.04-2.04.63-2.7 1.39-.59.68-1.1 1.87-.9 2.98 1.02.08 2.06-.53 2.66-1.28.57-.69 1-1.8.94-2.99zM20.5 7.5c-.28.22-1.94 1.2-1.94 3.73 0 2.74 2.24 4.26 2.36 4.34-.02.07-.65 2.08-2.01 3.9-1.2 1.6-2.46 3.2-4.46 3.27-1.83.07-2.39-1.09-4.47-1.09-2.08 0-2.78 1.07-4.53 1.16-1.94.11-3.47-1.83-4.69-3.42-1.62-2.2-2.87-5.95-1.21-9.2 1.05-1.76 2.9-2.87 4.9-2.9 1.64-.02 3.19.95 4.02.95.8 0 2.54-.99 4.27-.99 1.8 0 3.43.86 4.83 2.03z" fill="white"/></svg>
-        Download on the App Store
-      </a>
-
-      <a class="inline-flex items-center gap-3 px-5 py-3 rounded-lg font-semibold" href="#" style="background:var(--accent-2); color:white;">
-        <!-- Play logo (simple) -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 8-16 8V4z" fill="white"/></svg>
-        Get it on Google Play
-      </a>
-    </div>
-
-    <p class="mt-4 text-sm text-white/80">Available on iOS & Android. Cash on Delivery supported.</p>
-  </div>
-</section>
-
-<!-- Section 6: Footer -->
-<footer class="mt-0" style="background: rgba(37,55,57,0.98);">
-  <div class="max-w-6xl mx-auto px-6 py-8 text-white">
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
-      <div>
-        <div class="flex items-center gap-3 mb-3">
-          <div class="w-10 h-10 rounded-md bg-white/10 flex items-center justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.5 15.5L9.5 9.5L14.5 11L17.5 6.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
-          </div>
-          <div>
-            <div class="font-head text-lg">Wearlyfit</div>
-            <div class="text-xs text-white/80">Your Fit, Your Story</div>
-          </div>
-        </div>
-        <p class="text-sm text-white/70 max-w-sm">Built for Algerian shoppers — Cash on Delivery, local sellers, and an easy selling flow.</p>
-      </div>
-
-      <div>
-        <h4 class="font-semibold mb-3">Quick links</h4>
-        <ul class="space-y-2 text-sm text-white/70">
-          <li><a href="#" class="hover:underline">Home</a></li>
-          <li><a href="#features" class="hover:underline">Features</a></li>
-          <li><a href="#download" class="hover:underline">Download</a></li>
-          <li><a href="#" class="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold mb-3">Contact</h4>
-        <p class="text-sm text-white/70">hello@wearlyfit.dz</p>
-        <div class="flex items-center gap-3 mt-4">
-          <!-- optional social icons placeholders -->
-          <a href="#" class="w-8 h-8 rounded-md bg-white/6 flex items-center justify-center">F</a>
-          <a href="#" class="w-8 h-8 rounded-md bg-white/6 flex items-center justify-center">I</a>
-          <a href="#" class="w-8 h-8 rounded-md bg-white/6 flex items-center justify-center">T</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-6 text-sm text-white/60">© <span id="year"></span> Wearlyfit — All rights reserved.</div>
-  </div>
-</footer>
-
-  </main>  <script>
-    // set year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // tiny accessibility: enable keyboard focus visible ring for CTAs
-    document.querySelectorAll('a, button').forEach(el=>{
-      el.addEventListener('focus', ()=> el.classList.add('ring-2','ring-offset-2','ring-white/30'));
-      el.addEventListener('blur', ()=> el.classList.remove('ring-2','ring-offset-2','ring-white/30'));
-    });
-  </script></body>
-            </html>
+</body>
+</html>
